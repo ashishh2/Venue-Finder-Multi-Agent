@@ -59,7 +59,7 @@ venue_finder = Agent(
     ),
     tools=[search_tool],
     llm=llm,
-    max_iterations=3,
+    max_iter=3,
     verbose=True
 )
 
@@ -74,7 +74,7 @@ venue_quality_assurance_agent = Agent(
     ),
     tools=[search_tool],
     llm=llm,
-    max_iterations=3,
+    max_iter=3,
     verbose=True
 )
 
@@ -110,7 +110,6 @@ quality_assurance_review_task = Task(
 event_planning_crew = Crew(
   agents=[venue_finder, venue_quality_assurance_agent],
   tasks=[find_venue_task, quality_assurance_review_task],
-  max_iterations=3,
   verbose=True
 )
 
